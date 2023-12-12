@@ -1,0 +1,26 @@
+/*div {
+    border: solid #f24c4c;
+}*/
+
+body {
+    background-image: url("pattern.png");
+    background-size: auto;
+    background-repeat: repeat;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.task-block {
+    min-width: 300px;
+    margin: 30vh auto;
+    background-color: antiquewhite;
+    border: solid 3px #d29450;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}

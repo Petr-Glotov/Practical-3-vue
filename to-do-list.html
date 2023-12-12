@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="to-do-main.css">
+    <title>Приложение «Список дел»</title>
+</head>
+<body>
+<main class="wrapper">
+    <div class="task-block" id="app">
+        <h1>
+            Список задач
+        </h1>
+        <div>
+            <label for="productName">Название задачи:</label>
+            <input type="text" id="productName" v-model="newProduct">
+            <button @click="addProduct">Добавить</button>
+        </div>
+        <ul>
+            <li v-for="(product, index) in products">{{product}}
+                <button @click="removeProduct(index)">Удалить</button>
+            </li>
+        </ul>
+    </div>
+</main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                newProduct: '',
+                products: []
+            },
+            methods: {
+                addProduct() {
+                    if (this.newProduct.trim() !== ''){
+                        this.products.push(this.newProduct)
+                        this.newProduct = ''
+                    }
+                },
+                removeProduct(index) {
+                    this.products.splice(index, 1)
+                }
+            },
+        })
+    </script>
+
+</body>
+</html>
